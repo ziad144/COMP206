@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.send('Welocme to The user API'); 
+  res.send('Welocme to The Car Store API'); 
 });
 
 app.use("/users", userRouter);
