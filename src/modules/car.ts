@@ -2,7 +2,7 @@ import { Request,Response } from "express"
 import {Car} from "../types/car"
 let cars:Car[]=[
     {carId:1,brand:"BMW",model:2020,carclass:"A"},
-    {carId:2,brand:"honda",model:2013,carclass:"c"},
+    {carId:2,brand:"honda",model:2013,carclass:"C"},
     {carId:3,brand:"marceds",model:2024,carclass:"A"},
     {carId:4,brand:"BMW",model:2017,carclass:"A"}
 ]
