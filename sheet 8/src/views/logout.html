@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logout</title>
+</head>
+<body>
+    <h1>Your Profile</h1>
+    <p id="name"></p>
+    <p id="email"></p>
+    <form action="/logout" method="post">
+        <input type="submit" value="logout">
+    </form>
+    <script>
+        const getuser = async () => {
+            let res = await fetch("/session")
+            const data = await res.json()
+                const name = document.getElementById("name")
+                name.textContent = (`username:  ${data.name}`)
+                const email = document.getElementById("email")
+                email.textContent = (`email:  ${data.email}`)
+        }
+        document.addEventListener("DOMContentLoaded", getuser)
+    </script>
+</body>
+</html>

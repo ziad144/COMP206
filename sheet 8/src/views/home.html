@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+
+<body>
+    <h1>welcome to home page</h1>
+    <p id="user"></p>
+    <a href="/login">login</a>
+    <a href="/register">register</a>
+    <script>
+        async function getuser(){
+            let res =await fetch("/session")
+            let data=await res.json();
+            if(data.name)
+            {
+                let u =document.getElementById("user")
+                u.textContent =`Hello ${data.name}`
+                let a=document.querySelectorAll("a")
+                a.forEach(a => {
+                    a.style.display="none";
+                });
+            }
+        }
+        document.addEventListener("DOMContentLoaded", getuser)
+    </script>
+</body>
+
+</html>
